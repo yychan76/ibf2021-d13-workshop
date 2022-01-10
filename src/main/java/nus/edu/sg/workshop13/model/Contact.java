@@ -27,7 +27,7 @@ public class Contact implements Serializable {
         this.phone = phone;
     }
 
-    private String generateId(int length) {
+    private synchronized String generateId(int length) {
         int num = random.nextInt(0x1000000);
         String hexFormat = String.format("%%0%sx", length);
         return String.format(hexFormat, num);
